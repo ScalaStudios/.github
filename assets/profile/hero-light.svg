@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 280" fill="none" role="img" aria-label="Scala Studios infrastructure diagram">
+  <rect width="1200" height="280" fill="#F6F3EE"/>
+  <path d="M96 132H1104" stroke="#DDD6CC" stroke-width="1"/>
+  <path d="M392 132H620" stroke="#FA7E26" stroke-width="2"/>
+  <circle cx="168" cy="132" r="5" fill="#C8C0B6"/>
+  <circle cx="392" cy="132" r="11" fill="#F6F3EE" stroke="#FA7E26" stroke-width="2"/>
+  <circle cx="620" cy="132" r="4" fill="#8A8176"/>
+  <circle cx="848" cy="132" r="11" fill="#F6F3EE" stroke="#111111" stroke-width="2"/>
+  <circle cx="1048" cy="132" r="5" fill="#C8C0B6"/>
+  <text x="392" y="178" fill="#111111" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" font-weight="600" text-anchor="middle">Halo</text>
+  <text x="392" y="204" fill="#6F675E" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" text-anchor="middle">Identity</text>
+  <text x="848" y="178" fill="#111111" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" font-weight="600" text-anchor="middle">Shipyard</text>
+  <text x="848" y="204" fill="#6F675E" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" text-anchor="middle">Delivery</text>
+</svg>
