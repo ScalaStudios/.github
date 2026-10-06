@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400" fill="none" role="img" aria-label="Shipyard: source, pipeline, job, then ARTIFACT, PACKAGE, IMAGE, then release and deployment.">
+  <style>
+    svg { --bg:#F5F4F2;--raised:#FFFFFF;--border:#E7E5E2;--line:#A8A29B;--dot:#111111;--fg:#111111;--fg2:#57534D;--fg3:#6B655E;--ember:#E06A18;--glow:0.1;--dots:0.14 }
+    .label { font: 600 16px ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; letter-spacing: .14em; fill: var(--fg3); }
+    .chip-text { font: 600 15px ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; letter-spacing: .1em; fill: var(--fg2); }
+    .base { stroke: var(--line); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    .tail, .head { stroke-linecap: round; animation-timing-function: linear; animation-iteration-count: infinite; animation-duration: 8.0s; }
+    .tail { stroke: url(#heat); stroke-width: 4; stroke-dasharray: 150 4000; stroke-dashoffset: 152; opacity: .4; }
+    .head { stroke: url(#heat); stroke-width: 6; stroke-dasharray: 28 4000; stroke-dashoffset: 30; }
+    .stop { fill: var(--bg); stroke: var(--line); stroke-width: 3; }
+    .planned { stroke: url(#planned); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1 11; }
+    .chip { fill: var(--raised); stroke: var(--line); stroke-width: 1.5; }
+    .lit { fill: none; stroke: var(--ember); stroke-width: 3; opacity: 0; animation: lit 8.0s ease-out infinite; }
+    .chip-lit { fill: none; stroke: var(--ember); stroke-width: 1.5; opacity: 0; animation: lit 8.0s ease-out infinite; }
+    @keyframes lit { 0% { opacity: 1; } 18%, 100% { opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { .tail, .head { display: none; } .lit, .chip-lit { animation: none; } }
+    @keyframes ch1 { 0% { stroke-dashoffset: 30; } 58.0%, 100% { stroke-dashoffset: -1042.0; } }
+    @keyframes ct1 { 0% { stroke-dashoffset: 152; } 64.7%, 100% { stroke-dashoffset: -1042.0; } }
+    @keyframes ch2 { 0% { stroke-dashoffset: 30; } 22.2%, 100% { stroke-dashoffset: -382.6; } }
+    @keyframes ct2 { 0% { stroke-dashoffset: 152; } 28.8%, 100% { stroke-dashoffset: -382.6; } }
+    @keyframes ch3 { 0% { stroke-dashoffset: 30; } 22.2%, 100% { stroke-dashoffset: -382.6; } }
+    @keyframes ct3 { 0% { stroke-dashoffset: 152; } 28.8%, 100% { stroke-dashoffset: -382.6; } }
+  </style>
+  <defs>
+    <linearGradient id="ember" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F7AD31"/><stop offset=".48" stop-color="#FA7E26"/><stop offset="1" stop-color="#FC4F1B"/>
+    </linearGradient>
+    <linearGradient id="heat" x1="80" y1="0" x2="1120" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F7AD31"/><stop offset=".48" stop-color="#FA7E26"/><stop offset="1" stop-color="#FC4F1B"/>
+    </linearGradient>
+    <linearGradient id="planned" x1="232" y1="0" x2="860" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" style="stop-color: var(--line)"/><stop offset="1" style="stop-color: var(--line); stop-opacity: 0"/>
+    </linearGradient>
+    <linearGradient id="planned-mini" x1="952" y1="0" x2="1072" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" style="stop-color: var(--line)"/><stop offset="1" style="stop-color: var(--line); stop-opacity: 0"/>
+    </linearGradient>
+    <clipPath id="panel"><rect width="1200" height="400" rx="16"/></clipPath>
+    <radialGradient id="glow" cx="1" cy="0" r="1" gradientTransform="matrix(.75 0 0 1 .25 0)">
+      <stop offset="0" style="stop-color: #FA7E26; stop-opacity: var(--glow)"/><stop offset="1" stop-color="#FA7E26" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="27.71" height="32" patternUnits="userSpaceOnUse">
+      <g style="fill: var(--dot)"><circle r="1.25"/><circle cx="13.86" cy="16" r="1.25"/><circle cx="27.71" r="1.25"/><circle cy="32" r="1.25"/><circle cx="27.71" cy="32" r="1.25"/></g>
+    </pattern>
+    <radialGradient id="fade" cx=".8" cy=".15" r=".6"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+    <mask id="fade-mask"><rect width="1200" height="400" fill="url(#fade)"/></mask>
+  </defs>
+  <g clip-path="url(#panel)">
+    <rect width="1200" height="400" fill="var(--bg)"/>
+    <rect width="1200" height="400" fill="url(#glow)"/>
+    <rect width="1200" height="400" fill="url(#dots)" style="opacity: var(--dots)" mask="url(#fade-mask)"/>
+  </g>
+  <rect x=".75" y=".75" width="1198.5" height="398.5" rx="15.25" stroke="var(--border)" stroke-width="1.5"/>
+
+  <!-- Product -->
+  <g transform="translate(80 64)"><rect width="64" height="64" rx="12" fill="#111419"/><path d="M8 40h40l6 8H10l-2-8z" fill="#315EFB"/><path d="M10 40h36v-3H12l-2 3z" fill="#244CD8"/><rect x="38" y="28" width="10" height="9" rx="1.5" fill="#E7EAF0"/><rect x="40" y="30" width="3" height="3" rx="0.5" fill="#315EFB"/><rect x="44.5" y="30" width="2" height="3" rx="0.5" fill="#315EFB"/><rect x="12" y="30" width="8" height="7" rx="1" fill="#B86519"/><rect x="21" y="30" width="8" height="7" rx="1" fill="#315EFB"/><rect x="30" y="30" width="7" height="7" rx="1" fill="#69A7E8"/><rect x="14" y="22" width="8" height="7" rx="1" fill="#6E97FF"/><rect x="23" y="22" width="8" height="7" rx="1" fill="#B86519"/><path d="M6 50c4 2 8 2 12 0s8-2 12 0 8 2 12 0 8-2 12 0" stroke="#3A424D" stroke-width="1.5" fill="none" stroke-linecap="round"/></g><rect x="80.75" y="64.75" width="62.5" height="62.5" rx="11.25" stroke="var(--border)" stroke-width="1.5"/>
+  <path fill="var(--fg)" d="M188.2 103.9Q184.5 103.9 181.3 103.2Q178.1 102.6 175.7 101.1Q173.3 99.7 171.9 97.3Q170.5 94.9 170.5 91.4V90.9Q170.5 90.7 170.5 90.5H180.2Q180.2 90.7 180.2 90.9Q180.2 91.2 180.2 91.3Q180.2 93.1 181.1 94.2Q182 95.3 183.7 95.8Q185.4 96.3 187.6 96.3Q188.8 96.3 189.9 96.2Q191 96 191.8 95.8Q192.6 95.5 193.3 95.1Q193.9 94.6 194.2 94.1Q194.5 93.5 194.5 92.7Q194.5 91.4 193.6 90.6Q192.6 89.7 190.9 89.2Q189.3 88.6 187.2 88.1Q185.1 87.6 182.9 87Q180.7 86.5 178.6 85.6Q176.5 84.8 174.9 83.5Q173.2 82.2 172.2 80.3Q171.2 78.3 171.2 75.6Q171.2 72.6 172.5 70.4Q173.8 68.2 176.1 66.8Q178.4 65.4 181.3 64.7Q184.3 64.1 187.7 64.1Q191 64.1 193.8 64.7Q196.7 65.4 199 66.8Q201.2 68.3 202.5 70.4Q203.7 72.6 203.8 75.6V76.3H194.2V75.9Q194.2 74.6 193.5 73.6Q192.8 72.6 191.4 72Q190 71.5 187.9 71.5Q185.8 71.5 184.4 71.8Q183 72.2 182.2 73Q181.4 73.7 181.4 74.7Q181.4 75.9 182.4 76.7Q183.4 77.5 185.1 78.1Q186.8 78.6 188.8 79.1Q190.9 79.6 193.1 80.1Q195.3 80.6 197.4 81.5Q199.5 82.3 201.2 83.5Q202.8 84.8 203.8 86.6Q204.8 88.5 204.8 91.1Q204.8 95.7 202.6 98.5Q200.5 101.3 196.7 102.6Q192.9 103.9 188.2 103.9ZM209.4 103.2V62.7H218.6V76.9H219Q219.9 75.7 221.3 74.8Q222.7 74 224.3 73.5Q226 73 227.8 73Q231 73 233.2 74.2Q235.4 75.4 236.6 77.7Q237.8 80.1 237.8 83.7V103.2H228.6V85Q228.6 83.8 228.3 82.9Q228 82 227.4 81.4Q226.9 80.8 226 80.5Q225.2 80.2 224.1 80.2Q222.5 80.2 221.3 81Q220 81.8 219.3 83Q218.6 84.3 218.6 86V103.2ZM243.5 69.7V62.7H252.7V69.7ZM243.5 103.2V73.7H252.7V103.2ZM258.6 113.6V73.7H266.1L266.8 77.8H267.2Q268.7 75.3 271.1 74.1Q273.4 73 276.2 73Q280 73 282.7 74.7Q285.4 76.4 286.9 79.8Q288.3 83.2 288.3 88.5Q288.3 93.7 286.9 97.1Q285.4 100.5 282.7 102.2Q280.1 103.9 276.4 103.9Q274.6 103.9 273.1 103.5Q271.5 103.1 270.2 102.3Q269 101.4 268.1 100.2H267.7V113.6ZM273.4 96.7Q275.5 96.7 276.7 95.9Q278 95 278.5 93.4Q279.1 91.8 279.1 89.4V87.5Q279.1 85.1 278.5 83.5Q278 81.8 276.7 81Q275.5 80.2 273.4 80.2Q271.4 80.2 270.1 81.1Q268.9 82 268.3 83.7Q267.7 85.5 267.7 87.8V89.1Q267.7 90.8 268 92.2Q268.3 93.6 269 94.6Q269.7 95.6 270.8 96.2Q271.9 96.7 273.4 96.7ZM297.5 114.2Q295.5 114.2 294 113.9Q292.5 113.6 291.9 113.4V107.6H295.7Q297.3 107.6 298.4 106.9Q299.5 106.2 300.2 105.2Q300.8 104.2 301.1 103.2L289.5 73.7H299.3L303.6 86.6Q304 87.5 304.4 89Q304.8 90.4 305.2 91.9Q305.6 93.4 305.9 94.5H306.3Q306.5 93.7 306.8 92.7Q307 91.7 307.3 90.6Q307.6 89.5 307.9 88.5Q308.2 87.5 308.4 86.7L312.2 73.7H321.3L311.1 102Q310.2 104.6 309 106.8Q307.9 109.1 306.3 110.7Q304.8 112.4 302.6 113.3Q300.4 114.2 297.5 114.2ZM331.8 103.9Q330 103.9 328.2 103.5Q326.4 103.2 325 102.2Q323.6 101.3 322.7 99.7Q321.9 98.1 321.9 95.6Q321.9 92.4 323.2 90.4Q324.6 88.4 327.1 87.2Q329.7 86.1 333.3 85.6Q336.9 85.2 341.4 85.2V83.3Q341.4 82 340.9 81.2Q340.4 80.3 339.4 79.8Q338.4 79.4 336.8 79.4Q335.3 79.4 334.2 79.7Q333.1 80 332.6 80.7Q332 81.3 332 82.2V82.7H323.1Q323 82.4 323 82.2V81.7Q323 79.1 324.7 77.1Q326.3 75.2 329.4 74.1Q332.5 73 336.8 73Q340.9 73 344 74Q347 75 348.8 77.1Q350.6 79.2 350.6 82.5V95.1Q350.6 96.1 351.1 96.7Q351.6 97.2 352.4 97.2H354.3V102.9Q353.7 103.2 352.4 103.5Q351.1 103.9 349.2 103.9Q347.3 103.9 345.9 103.4Q344.5 102.9 343.5 102.1Q342.6 101.2 342.3 100H341.9Q340.8 101.1 339.4 102Q338 102.9 336.1 103.4Q334.2 103.9 331.8 103.9ZM335.2 97.6Q336.6 97.6 337.7 97.2Q338.8 96.8 339.6 96.1Q340.4 95.4 340.9 94.4Q341.4 93.4 341.4 92.2V90.2Q338.2 90.2 335.9 90.7Q333.6 91.1 332.4 92.1Q331.1 93 331.1 94.5Q331.1 95.5 331.7 96.2Q332.2 96.9 333.1 97.2Q334 97.6 335.2 97.6ZM356.9 103.2V73.7H364.5L365.2 78.2H365.6Q366.2 76.7 367.2 75.5Q368.2 74.3 369.6 73.6Q371.1 73 372.8 73Q373.8 73 374.6 73.2Q375.5 73.4 375.9 73.6V81.6H373Q371.2 81.6 369.9 82.1Q368.6 82.5 367.8 83.5Q366.9 84.5 366.5 85.9Q366.1 87.3 366.1 89.2V103.2ZM388.8 103.9Q385.1 103.9 382.3 102.2Q379.6 100.5 378.1 97.1Q376.7 93.7 376.7 88.4Q376.7 83.2 378.1 79.8Q379.6 76.4 382.3 74.7Q385 73 388.6 73Q390.4 73 392 73.4Q393.6 73.8 394.8 74.6Q396.1 75.5 397 76.7H397.3V62.7H406.5V103.2H399L398.3 99.1H397.9Q396.4 101.5 394.1 102.7Q391.7 103.9 388.8 103.9ZM391.7 96.7Q393.7 96.7 394.9 95.8Q396.2 94.9 396.8 93.2Q397.4 91.4 397.4 89.2V87.8Q397.4 86.1 397 84.7Q396.7 83.3 396 82.3Q395.4 81.3 394.3 80.8Q393.2 80.2 391.7 80.2Q389.6 80.2 388.3 81Q387.1 81.9 386.5 83.5Q386 85.1 386 87.5V89.5Q386 91.8 386.5 93.5Q387.1 95.1 388.3 95.9Q389.6 96.7 391.7 96.7Z"/>
+  <text class="label" x="168" y="133.2">CI/CD, PACKAGES AND CONTAINER IMAGES</text>
+  <g stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"><path stroke="var(--line)" d="M928 96L948 96Q952 96 955.5 94L983.2 78Q986.6 76 990.6 76L1120 76"/><circle cx="1120" cy="76" r="4" fill="var(--bg)" stroke="var(--line)"/><path stroke="url(#planned-mini)" stroke-dasharray="1 7" d="M952 96L1076.8 96"/><path stroke="url(#planned-mini)" stroke-dasharray="1 7" d="M952 96L965.9 104Q969.3 106 973.3 106L1070.4 106"/><path stroke="url(#planned-mini)" stroke-dasharray="1 7" d="M952 96L983.2 114Q986.6 116 990.6 116L1064 116"/><path stroke="var(--ember)" d="M928 96L948 96Q952 96 955.5 94L965.9 88Q969.3 86 973.3 86L1120 86"/><circle cx="1120" cy="86" r="4" fill="var(--bg)" stroke="var(--ember)"/><circle cx="928" cy="96" r="5" fill="var(--bg)" stroke="var(--line)"/></g>
+
+  <!-- Shipyard: one line with labelled stops and a three-way split -->
+  <path class="base" d="M80 264L1120 264"/>
+  <path class="base" d="M456 264L539.1 216Q553 208 569 208L695 208Q711 208 724.9 216L808 264"/>
+  <path class="base" d="M456 264L539.1 312Q553 320 569 320L695 320Q711 320 724.9 312L808 264"/>
+  <path class="tail" style="animation-name: ct1;" d="M80 264L1120 264"/>
+  <path class="head" style="animation-name: ch1;" d="M80 264L1120 264"/>
+  <path class="tail" style="animation-name: ct2; animation-delay: 1.63s;" d="M456 264L539.1 216Q553 208 569 208L695 208Q711 208 724.9 216L808 264"/>
+  <path class="head" style="animation-name: ch2; animation-delay: 1.63s;" d="M456 264L539.1 216Q553 208 569 208L695 208Q711 208 724.9 216L808 264"/>
+  <path class="tail" style="animation-name: ct3; animation-delay: 1.63s;" d="M456 264L539.1 312Q553 320 569 320L695 320Q711 320 724.9 312L808 264"/>
+  <path class="head" style="animation-name: ch3; animation-delay: 1.63s;" d="M456 264L539.1 312Q553 320 569 320L695 320Q711 320 724.9 312L808 264"/>
+  <circle class="stop" cx="80" cy="264" r="11"/>
+  <circle class="lit" cx="80" cy="264" r="11" style="animation-delay: 0.06s"/>
+  <text class="label" x="80" y="236" text-anchor="start">SOURCE</text>
+  <circle class="stop" cx="232" cy="264" r="7"/>
+  <circle class="lit" cx="232" cy="264" r="7" style="animation-delay: 0.74s"/>
+  <text class="label" x="232" y="236" text-anchor="middle">PIPELINE</text>
+  <circle class="stop" cx="384" cy="264" r="7"/>
+  <circle class="lit" cx="384" cy="264" r="7" style="animation-delay: 1.37s"/>
+  <text class="label" x="384" y="236" text-anchor="middle">JOB</text>
+  <circle class="stop" cx="904" cy="264" r="7"/>
+  <circle class="lit" cx="904" cy="264" r="7" style="animation-delay: 3.63s"/>
+  <text class="label" x="904" y="236" text-anchor="middle">RELEASE</text>
+  <circle class="stop" cx="1120" cy="264" r="11"/>
+  <circle class="lit" cx="1120" cy="264" r="11" style="animation-delay: 4.58s"/>
+  <text class="label" x="1120" y="236" text-anchor="end">DEPLOYMENT</text>
+  <rect class="chip" x="574.8" y="192" width="114.5" height="32" rx="8"/>
+  <rect class="chip-lit" x="574.8" y="192" width="114.5" height="32" rx="8" style="animation-delay: 2.52s"/>
+  <text class="chip-text" x="632" y="213" text-anchor="middle">ARTIFACT</text>
+  <rect class="chip" x="580" y="248" width="104" height="32" rx="8"/>
+  <rect class="chip-lit" x="580" y="248" width="104" height="32" rx="8" style="animation-delay: 2.46s"/>
+  <text class="chip-text" x="632" y="269" text-anchor="middle">PACKAGE</text>
+  <rect class="chip" x="590.5" y="304" width="83" height="32" rx="8"/>
+  <rect class="chip-lit" x="590.5" y="304" width="83" height="32" rx="8" style="animation-delay: 2.52s"/>
+  <text class="chip-text" x="632" y="325" text-anchor="middle">IMAGE</text>
+</svg>
