@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="96" viewBox="0 0 1200 96" fill="none" role="img" aria-label="Scala Studios">
+  <defs>
+    <linearGradient id="ember" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7AD31"/><stop offset=".48" stop-color="#FA7E26"/><stop offset="1" stop-color="#FC4F1B"/></linearGradient>
+    <linearGradient id="l" x1="0" y1="0" x2="552.0" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FA7E26" stop-opacity="0"/><stop offset="1" stop-color="#FA7E26" stop-opacity=".7"/></linearGradient>
+    <linearGradient id="r" x1="1200" y1="0" x2="648.0" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FA7E26" stop-opacity="0"/><stop offset="1" stop-color="#FA7E26" stop-opacity=".7"/></linearGradient>
+  </defs>
+  <path stroke="url(#l)" stroke-width="2" d="M0 48.0H552.0"/>
+  <path stroke="url(#r)" stroke-width="2" d="M648.0 48.0H1200"/>
+  <path transform="translate(578.8 20) scale(0.2060)" fill="url(#ember)" d="M121.9 0L45.4 32C15.2 44.7 0 62 0 92C0 116.1 21.5 125.7 32.9 132.1L186.8 219V223.6L138.3 194.7L83.1 213.6V271.9L159.7 240.5C176.8 233.5 206 223.6 206 188.1C206 156 189.6 148.7 177.9 142.3L21.8 57V50.9L73.1 79.7L121.9 60.8ZM3.5 160.4V227.3L78.6 268.9V201.7ZM127.6 2.6V65.6L196.7 103.2V39.5Z"/>
+</svg>
